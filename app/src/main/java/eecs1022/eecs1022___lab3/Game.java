@@ -33,15 +33,15 @@ public class Game
         if  (round == 1){
             this.p1=p1;
             this.p2=p2;
-            this.p21 = p21;
-            this.p22= p22;
+            this.p21 = p11;
+            this.p22= p12;
 
         }
         if (round == 2){
             this.p1=p1;
             this.p2=p2;
-            this.p31=p31;
-            this.p32=p32;
+            this.p31=p11;
+            this.p32=p12;
         }
     }
 
