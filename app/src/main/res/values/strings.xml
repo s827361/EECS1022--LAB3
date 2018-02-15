@@ -1,31 +1,6 @@
 <resources>
     <string name="app_name">EECS1022 W18 LAB3 R-P-S GAME</string>
-    <string-array name="spinner">
-        <item>Rock</item>
-        <item>Paper</item>
-        <item>Scissors</item>
-    </string-array>
-    <string-array name="spinner2">
-        <item>Rock</item>
-        <item>Paper</item>
-        <item>Scissors</item>
-    </string-array>
-    <string-array name="spinner3">
-        <item>Rock</item>
-        <item>Paper</item>
-        <item>Scissors</item>
-    </string-array>
-    <string-array name="spinner4">
-        <item>Rock</item>
-        <item>Paper</item>
-        <item>Scissors</item>
-    </string-array>
-    <string-array name="spinner5">
-        <item>Rock</item>
-        <item>Paper</item>
-        <item>Scissors</item>
-    </string-array>
-    <string-array name="spinner6">
+    <string-array name="rps">
         <item>Rock</item>
         <item>Paper</item>
         <item>Scissors</item>

@@ -3,218 +3,82 @@ package eecs1022.eecs1022___lab3;
 /**
  * Created by user on 2/14/18.
  */
-public class Game
-{
-    String p1;
-    String p2;
-    String p11;
-    String p12;
-    String p21;
-    String p22;
-    String p31;
-    String p32;
-    double round;
+public class Game {
+    boolean gameOver;
+    boolean gameOverError;
 
+    String NAME1;
+    String NAME2;
+    int P1Score;
+    int P2Score;
 
+    Game () {
+        this.P1Score= 0;
+        this.P2Score = 0;
+        this.gameOver = false;
+        this.gameOverError = false;
+    }
 
+    void setName(String n1, String n2) {
+        NAME1 = n1;
+        NAME2 = n2;
+    }
 
+    void play(int round, String p1, String p2) {
 
-    public Game(String p1ayer1, String player2, String player1action, String player2action)
-    {
-        if (round == 0)
-        {
-            this.p1 = p1ayer1;
-            this.p2 = player2;
-            this.p11 = player1action;
-            this.p12 = player2action;
-
-
+        if (gameOver) {
+            gameOverError = true;
+        } else {
+            if (p1.equals("Rock")) {
+                if (p2.equals("Paper")) {
+                    P2Score ++;
+                } else if (p2.equals("Scissors")) {
+                    P1Score ++;
+                }
+            } else if (p1.equals("Paper")) {
+                if (p2.equals("Scissors")) {
+                    P2Score ++;
+                } else if (p2.equals("Rock")) {
+                    P1Score ++;
+                }
+            } else {
+                if (p2.equals("Rock")) {
+                    P2Score ++;
+                } else if (p2.equals("Paper")) {
+                    P1Score ++;
+                }
+            }
         }
-        if  (round == 1){
-            this.p1 = p1ayer1;
-            this.p2 = player2;
-            this.p21 = player1action;
-            this.p22 = player2action;
 
-
-        }
-        if (round == 2){
-            this.p1 = p1ayer1;
-            this.p2 = player2;
-            this.p31 = player1action;
-            this.p32 = player2action;
-
+        if (P1Score == 2 | P2Score == 2 || round == 3) {
+            gameOver = true;
         }
     }
 
-
-
-
-
-
-
-    public String toString()
-    {
-        String s = "";
-        if (round == 0)
-        {
-
-            s = "Round 1 Finished,";
-            s += "\n";
-            if (p11 == p12)
-            {
-                s += "Tie between" + p1 + "and" + p2;
-
-
+    String toString(int round) {
+        String s;
+        if (round == 0) {
+            s = "New Game Started.\nEnter names of players.";
+        } else {
+            if (gameOverError) {
+                s = "Error: Game is already over.";
+            } else {
+                if (P1Score > P2Score) {
+                    s = "Round " + round + " Finished: Winner is " + NAME1;
+                } else if (P1Score < P2Score) {
+                    s = "Round " + round + " Finished: Winner is " + NAME2;
+                } else {
+                    s =  "Round " + round + " Finished: Tie between " + NAME1 + " and " + NAME2;
+                }
+                if (gameOver) {
+                    s += "\n";
+                    s += "Game is Over.";
+                }
             }
-            if (p11 == "Paper" && p12 == "Scissors")
-            {
-                s += "Winner is " + p2;
-
-            }
-            if (p11 == "Paper" && p12 == "Rock")
-            {
-                s += "Winner is " + p1;
-
-            }
-            if (p11 == "Rock" && p12 == "Scissors")
-            {
-                s += "Winner is " + p1;
-
-            }
-            if (p11 == "Rock" && p12 == "Paper")
-            {
-                s += "Winner is " + p2;
-
-            }
-            if (p11 == "Scissors" && p12 == "Paper")
-            {
-                s += "Winner is " + p1;
-
-            }
-            if (p11 == "Scissors" && p12 == "Rock")
-            {
-                s += "Winner is " + p2;
-
-            }
-
-
-        }
-        if (round ==1){
-            s = "Round 2 Finished," ;
-            s += "\n";
-            if(p21 == p22){
-                s += "Tie between" + p1 + "and" +p2;
-
-
-
-            }
-            if (p21 == "Paper" && p22 == "Scissors"){
-                s += "Winner is "+ p2;
-
-            }
-            if (p21 == "Paper" && p22 == "Rock"){
-                s += "Winner is "+ p1;
-
-            }
-            if (p21 == "Rock" && p22 == "Scissors"){
-                s += "Winner is "+ p1;
-
-            }
-            if (p21 == "Rock" && p22 == "Paper"){
-                s += "Winner is "+ p2;
-
-            }
-            if (p21 == "Scissors" && p22 == "Paper"){
-                s += "Winner is "+ p1;
-
-            }
-            if (p21 == "Scissors" && p22 == "Rock"){
-                s += "Winner is "+ p2;
-
-            }
-        }
-        if(round ==2){
-            s = "Round 3 Finished," ;
-            s += "\n";
-            if(p31 == p32){
-                s += "Tie between" + p1 + "and" +p2;
-
-
-
-            }
-            if (p31 == "Paper" && p32 == "Scissors"){
-                s += "Winner is "+ p2;
-
-            }
-            if (p31 == "Paper" && p32 == "Rock"){
-                s += "Winner is "+ p31;
-
-            }
-            if (p31 == "Rock" && p32 == "Scissors"){
-                s += "Winner is "+ p1;
-
-            }
-            if (p31 == "Rock" && p32 == "Paper"){
-                s += "Winner is "+ p2;
-
-            }
-            if (p31 == "Scissors" && p32 == "Paper"){
-                s += "Winner is "+ p1;
-
-            }
-            if (p31 == "Scissors" && p32 == "Rock"){
-                s += "Winner is "+ p2;
-
-            }
-            s += "Game is over.";
-
         }
         return s;
     }
-
-    public void setP1(String p1)
-    {
-        this.p1 = p1;
-    }
-
-    public void setP2(String p2)
-    {
-        this.p2 = p2;
-    }
-
-    public void setP11(String p11)
-    {
-        this.p11 = p11;
-    }
-
-    public void setP12(String p12)
-    {
-        this.p12 = p12;
-    }
-
-    public void setP21(String p21)
-    {
-        this.p21 = p21;
-    }
-
-    public void setP22(String p22)
-    {
-        this.p22 = p22;
-    }
-
-    public void setP31(String p31)
-    {
-        this.p31 = p31;
-    }
-
-    public void setP32(String p32)
-    {
-        this.p32 = p32;
-    }
-
-    public void setRound(double round)
-    {
-        this.round = round;
-    }
 }
+
+
+
