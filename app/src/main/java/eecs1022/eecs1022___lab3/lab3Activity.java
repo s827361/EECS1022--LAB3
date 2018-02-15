@@ -60,16 +60,14 @@ public class lab3Activity extends AppCompatActivity
         String p1 = getInputOfTextField(R.id.editText);
         String p2 = getInputOfTextField(R.id.editText2);
 
-        String p11 = getInputOfTextField(R.id.spinner);
-        String p12 = getInputOfTextField(R.id.spinner2);
+
         String p21 = getInputOfTextField(R.id.spinner3);
         String p22 = getInputOfTextField(R.id.spinner4);
-        String p31 = getInputOfTextField(R.id.spinner5);
-        String p32 = getInputOfTextField(R.id.spinner6);
+
         double round = 1;
 
 
-        Game result = new Game (p1,p2,p11,p12);
+        Game result = new Game (p1,p2,p21,p22);
         String rt = result.toString();
         setContentsOfTextView(R.id.lableAnswer, result.toString());
 
@@ -78,15 +76,12 @@ public class lab3Activity extends AppCompatActivity
         String p1 = getInputOfTextField(R.id.editText);
         String p2 = getInputOfTextField(R.id.editText2);
 
-        String p11 = getInputOfTextField(R.id.spinner);
-        String p12 = getInputOfTextField(R.id.spinner2);
-        String p21 = getInputOfTextField(R.id.spinner3);
-        String p22 = getInputOfTextField(R.id.spinner4);
+
         String p31 = getInputOfTextField(R.id.spinner5);
         String p32 = getInputOfTextField(R.id.spinner6);
         double round = 2;
 
-        Game result = new Game (p1,p2,p11,p12);
+        Game result = new Game (p1,p2,p31,p32);
         String rt = result.toString();
         setContentsOfTextView(R.id.lableAnswer, result.toString());
 

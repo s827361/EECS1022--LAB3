@@ -19,29 +19,31 @@ public class Game
 
 
 
-    public Game(String p1, String p2, String p11, String p12)
+    public Game(String p1ayer1, String player2, String player1action, String player2action)
     {
         if (round == 0)
         {
-            this.p1 = p1;
-            this.p2 = p2;
-            this.p11 = p11;
-            this.p12 = p12;
+            this.p1 = p1ayer1;
+            this.p2 = player2;
+            this.p11 = player1action;
+            this.p12 = player2action;
 
 
         }
         if  (round == 1){
-            this.p1=p1;
-            this.p2=p2;
-            this.p21 = p11;
-            this.p22= p12;
+            this.p1 = p1ayer1;
+            this.p2 = player2;
+            this.p21 = player1action;
+            this.p22 = player2action;
+
 
         }
         if (round == 2){
-            this.p1=p1;
-            this.p2=p2;
-            this.p31=p11;
-            this.p32=p12;
+            this.p1 = p1ayer1;
+            this.p2 = player2;
+            this.p31 = player1action;
+            this.p32 = player2action;
+
         }
     }
 
@@ -186,6 +188,11 @@ public class Game
         this.p11 = p11;
     }
 
+    public void setP12(String p12)
+    {
+        this.p12 = p12;
+    }
+
     public void setP21(String p21)
     {
         this.p21 = p21;
@@ -209,10 +216,5 @@ public class Game
     public void setRound(double round)
     {
         this.round = round;
-    }
-
-    public void setP12(String p12)
-    {
-        this.p12 = p12;
     }
 }
